@@ -1,0 +1,32 @@
+---
+title: "first post"
+description: ''
+layout: post
+output:
+  html_document:
+    highlight: pygments
+  pdf_document: default
+  word_document: default
+tags: R
+category: code
+---
+{% include JB/setup %}
+
+
+
+```{r setup, echo=TRUE, message=FALSE}
+library("knitr")
+library("ggplot2")
+
+df <- data.frame(a = rnorm(500),
+                 b = rt(500, df = 5))
+
+head(df)
+
+p <- ggplot(df)+
+     geom_point(aes(x = a, y = b))
+plot(p)
+```
+
+### Test knitr
+
